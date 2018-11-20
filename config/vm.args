@@ -1,0 +1,6 @@
+-sname cowboy_demo
+
+-setcookie cowboy_demo_cookie
+
++K true
++A30

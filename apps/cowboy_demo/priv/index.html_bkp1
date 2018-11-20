@@ -1,0 +1,44 @@
+<!DOCTYPE HTML>
+<html>
+  <head>
+    <script type="text/javascript">
+        var ws = "";
+        ws = new WebSocket("ws://localhost:8080/websocket");
+
+//        if ("WebSocket" in window){
+//          alert("WebSocket is supported bu your browser");
+//          ws = new WebSocket("ws://localhost:8080/websocket");
+//        }
+//        else{
+//          // The browser doesn't support WebSocket
+//          alert("WebSocket NOT supported by your Browser!");
+//          window.close();
+//        }
+         function WebSocketTest(){
+           alert("Came In");
+             alert("In Open");
+             ws.send("Message to send");
+             alert("Message is sent...");
+          ws.onmessage = function (evt){
+            alert("On Message");
+            var received_msg = evt.data;
+            alert("Message is received..."+received_msg);                                                                                                                         };
+          ws.onclose = function()
+          {
+            alert("On Close");
+            // websocket is closed.
+           alert("Connection is closed...");
+          };
+      }
+      function WebScoetClose(){
+        ws.close();
+      }
+    </script>
+  </head>
+  <body>
+    <div id="sse">
+      <a href="javascript:WebSocketTest()">Run WebSocket</a>
+      <a href="javascript:WebScoetClose()">Close Webscoket</a>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,20 @@
+{application, cowboy_demo, [
+	{description, ""},
+	{vsn, "0.2.0"},
+	{id, "git"},
+	{modules, []},
+	{registered, []},
+	{applications, [
+		kernel,
+		stdlib,
+		crypto,
+		ranch,
+		cowlib,
+		cowboy,
+        jiffy,
+        mnesia,
+        sasl
+	]},
+	{mod, {cowboy_demo_app, []}},
+	{env, []}
+]}.
